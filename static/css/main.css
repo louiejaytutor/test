@@ -1,17 +1,19 @@
 :root {
-    --black-1: #343635;
+    --black-1: #2F322F;
 
     --blue-1: #2471FF;
-    --blue-2: #46AAFF;
-    --blue-3: #CEDEFF;
+    --blue-2: #41ABFF;
+    --blue-3: #CDDFFF;
 
-    --gray-1: #BFC7DA;
+    --gray-1: #FBFDFF;
 
     --pink-1: #ffb6c1;
     --pink-2: #ffd1dc;
     --pink-3: #ffe4e1;
     --pink-4: #fff0f5;
     --pink-5: #faebd7;
+
+    --red-1: #F33E59;
 
     --white-1: #fbfcff;
 }
@@ -23,7 +25,7 @@
 }
 
 body {
-    background-color: var(--white-1);
+    background-color: var(--pink-4);
 }
 
 button {
@@ -33,7 +35,6 @@ button {
 
 .container {
     position: relative;
-    height: 100%;
     max-height: calc(100vh - 120px);
     margin: 20px;
 }
@@ -48,8 +49,8 @@ button {
     background-color: transparent;
 }
 .navigation .active {
-    color: var(--blue-1);
-    background-color: var(--blue-3);
+    color: var(--pink-1);
+    background-color: var(--pink-3);
 }
 
 .add-task {
@@ -64,7 +65,7 @@ button {
     border: none;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    background: linear-gradient(135deg, var(--blue-2), var(--blue-1));
+    background-color: var(--pink-1);
 }
 
 .tasks {

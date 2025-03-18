@@ -1,0 +1,110 @@
+:root {
+    --black-1: #343635;
+
+    --blue-1: #2471FF;
+    --blue-2: #46AAFF;
+    --blue-3: #CEDEFF;
+
+    --gray-1: #BFC7DA;
+
+    --pink-1: #ffb6c1;
+    --pink-2: #ffd1dc;
+    --pink-3: #ffe4e1;
+    --pink-4: #fff0f5;
+    --pink-5: #faebd7;
+
+    --white-1: #fbfcff;
+}
+
+* {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--white-1);
+    background: linear-gradient(135deg, var(--pink-1), var(--pink-5));
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+
+.container {
+    position: relative;
+    margin: 20px;
+}
+
+.navigation {
+    margin: 20px 0;
+}
+.navigation button {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+}
+.navigation .active {
+    color: var(--blue-1);
+    background-color: var(--blue-3);
+}
+
+.add-task {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.add-task button {
+    color: white;
+    width: 100%;
+    padding: 30px;
+    border: none;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background: linear-gradient(135deg, var(--blue-2), var(--blue-1));
+}
+
+.tasks {
+    
+}
+.task {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.task-title {
+    color: var(--black-1);
+    font-size: 18px;
+    font-weight: bold;
+}
+.task-timestamp {
+    color: var(--gray-1);
+    font-size: 10px;
+    position: relative;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+.task-action {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    margin-top: -30px;
+}
+.task-action button {
+    font-size: 16px;
+    color: var(--black-1);
+    height: 30px;
+    width: 30px;
+    margin: 0 2px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+}
+.task-action button:hover {
+    background-color: var(--gray-1);
+}

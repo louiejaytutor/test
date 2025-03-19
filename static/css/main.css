@@ -2,10 +2,12 @@
     --black-1: #2F322F;
 
     --blue-1: #2471FF;
-    --blue-2: #41ABFF;
-    --blue-3: #CDDFFF;
+    --blue-2: #4C88FF;
+    --blue-3: #41ABFF;
+    --blue-4: #CDDFFF;
 
-    --gray-1: #FBFDFF;
+    --gray-1: #CBCCD0;
+    --gray-2: #FBFDFF;
 
     --pink-1: #ffb6c1;
     --pink-2: #ffd1dc;
@@ -22,10 +24,15 @@
     font-family: 'Poppins';
     margin: 0;
     padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
-    background-color: var(--pink-4);
+    background-color: var(--gray-2);
 }
 
 button {
@@ -35,8 +42,18 @@ button {
 
 .container {
     position: relative;
-    max-height: calc(100vh - 120px);
-    margin: 20px;
+    padding: 20px;
+    overflow: hidden;
+    height: calc(100vh - 40px);
+    max-height: calc(100vh - 40px);
+}
+
+.header {
+    
+}
+.header h1,
+.header h5 {
+    color: var(--black-1);
 }
 
 .navigation {
@@ -49,64 +66,129 @@ button {
     background-color: transparent;
 }
 .navigation .active {
-    color: var(--pink-1);
-    background-color: var(--pink-3);
+    color: var(--blue-1);
+    background-color: var(--blue-4);
 }
 
-.add-task {
+.task-action {
     position: absolute;
+    height: 100vh;
+    left: 0;
     bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     width: 100%;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out 0.5s;
 }
-.add-task button {
+.task-action:has(.task-form.active) {
+    pointer-events: all;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+.show-task-btn {
     color: white;
-    width: 100%;
+    visibility: hidden;
     padding: 30px;
+    width: 100%;
     border: none;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    background-color: var(--pink-1);
+    background-color: var(--blue-1);
+    transform: translateY(80px);
+    transition: all 0.5s ease-in-out;
+}
+.show-task-btn.active {
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0px);
+    transition: all 0.5s ease-in-out 0.5s;
+}
+.task-form {
+    visibility: hidden;
+    padding: 20px;
+    margin-bottom: -192px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: var(--blue-1);
+    transition: all 0.5s ease-in-out;
+}
+.task-form.active {
+    visibility: visible;
+    margin-bottom: 0px;
+    transition: all 0.5s ease-in-out 0.5s;
+}
+.task-form h3 {
+    color: white;
+    text-align: center;
+    padding: 0 50px;
+    margin-bottom: 20px;
+}
+.task-form input {
+    color: white;
+    font-size: 16px;
+    text-indent: 10px;
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.task-form input::placeholder {
+    color: var(--blue-2);
+    font-size: 16px;
+}
+.task-form-action {
+    text-align: right;
+}
+.task-form-action button {
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+}
+.task-form button:nth-child(1) {
+    color: white;
+    background-color: transparent;
+}
+.task-form button:nth-child(2) {
+    color: var(--black-1);
+    background-color: white;
 }
 
 .tasks {
     
 }
 .task {
+    position: relative;
     margin: 20px 0;
     padding: 20px;
     border-radius: 15px;
     background-color: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /*box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;*/
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 2px 10px 0px;
 }
 .task-title {
     color: var(--black-1);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 .task-timestamp {
     color: var(--gray-1);
     font-size: 10px;
-    position: relative;
     height: 30px;
     display: flex;
     align-items: center;
 }
-.task-action {
-    position: absolute;
-    right: 0;
-    margin-right: 20px;
-    margin-top: -30px;
-}
-.task-action button {
-    font-size: 16px;
+.task button {
     color: var(--black-1);
     height: 30px;
     width: 30px;
-    margin: 0 2px;
+    float: right;
+    margin-top: -30px;
     border: none;
     border-radius: 50%;
-    background-color: transparent;
-}
-.task-action button:hover {
-    background-color: var(--gray-1);
+    outline: none;
 }
